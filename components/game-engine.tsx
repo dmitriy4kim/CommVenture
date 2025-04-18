@@ -279,42 +279,86 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         const controlSize = 50
         const margin = 20
         const alpha = 0.5
-
+      
         // Up arrow
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowup"] ? 0.7 : alpha})`
         ctx.beginPath()
-        ctx.moveTo(canvas.width - margin - controlSize * 1.5, canvas.height - margin - controlSize * 2)
-        ctx.lineTo(canvas.width - margin - controlSize * 2, canvas.height - margin - controlSize)
-        ctx.lineTo(canvas.width - margin - controlSize, canvas.height - margin - controlSize)
-        ctx.closePath()
+        ctx.arc(canvas.width - margin - controlSize * 1.5, canvas.height - margin - controlSize * 2, controlSize/2, 0, Math.PI * 2)
         ctx.fill()
-
-        // Down arrow
+        
+        // Up arrow strelka
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.lineWidth = 2
+        const upX = canvas.width - margin - controlSize * 1.5
+        const upY = canvas.height - margin - controlSize * 2
+        // Strelka (up)
+        ctx.moveTo(upX, upY + 10)
+        ctx.lineTo(upX, upY - 10)
+        ctx.moveTo(upX - 8, upY - 2)
+        ctx.lineTo(upX, upY - 10)
+        ctx.lineTo(upX + 8, upY - 2)
+        ctx.stroke()
+      
+        // Down arrow - originalga nisbatan biroz yuqoriroq (controlSize * 0.5 ga)
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowdown"] ? 0.7 : alpha})`
         ctx.beginPath()
-        ctx.moveTo(canvas.width - margin - controlSize * 1.5, canvas.height - margin)
-        ctx.lineTo(canvas.width - margin - controlSize * 2, canvas.height - margin - controlSize)
-        ctx.lineTo(canvas.width - margin - controlSize, canvas.height - margin - controlSize)
-        ctx.closePath()
+        ctx.arc(canvas.width - margin - controlSize * 1.5, canvas.height - margin - controlSize * 0.5, controlSize/2, 0, Math.PI * 2)
         ctx.fill()
-
+        
+        // Down arrow strelka
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.lineWidth = 2
+        const downX = canvas.width - margin - controlSize * 1.5
+        const downY = canvas.height - margin - controlSize * 0.5
+        // Strelka (down)
+        ctx.moveTo(downX, downY - 10)
+        ctx.lineTo(downX, downY + 10)
+        ctx.moveTo(downX - 8, downY + 2)
+        ctx.lineTo(downX, downY + 10)
+        ctx.lineTo(downX + 8, downY + 2)
+        ctx.stroke()
+      
         // Left arrow
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowleft"] ? 0.7 : alpha})`
         ctx.beginPath()
-        ctx.moveTo(margin, canvas.height - margin - controlSize * 1.5)
-        ctx.lineTo(margin + controlSize, canvas.height - margin - controlSize * 2)
-        ctx.lineTo(margin + controlSize, canvas.height - margin - controlSize)
-        ctx.closePath()
+        ctx.arc(margin + controlSize / 2, canvas.height - margin - controlSize * 1.5, controlSize/2, 0, Math.PI * 2)
         ctx.fill()
-
+        
+        // Left arrow strelka
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.lineWidth = 2
+        const leftX = margin + controlSize / 2
+        const leftY = canvas.height - margin - controlSize * 1.5
+        // Strelka (left)
+        ctx.moveTo(leftX + 10, leftY)
+        ctx.lineTo(leftX - 10, leftY)
+        ctx.moveTo(leftX - 2, leftY - 8)
+        ctx.lineTo(leftX - 10, leftY)
+        ctx.lineTo(leftX - 2, leftY + 8)
+        ctx.stroke()
+      
         // Right arrow
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowright"] ? 0.7 : alpha})`
         ctx.beginPath()
-        ctx.moveTo(margin + controlSize * 2, canvas.height - margin - controlSize * 1.5)
-        ctx.lineTo(margin + controlSize, canvas.height - margin - controlSize * 2)
-        ctx.lineTo(margin + controlSize, canvas.height - margin - controlSize)
-        ctx.closePath()
+        ctx.arc(margin + controlSize * 1.5, canvas.height - margin - controlSize * 1.5, controlSize/2, 0, Math.PI * 2)
         ctx.fill()
+        
+        // Right arrow strelka
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.lineWidth = 2
+        const rightX = margin + controlSize * 1.5
+        const rightY = canvas.height - margin - controlSize * 1.5
+        // Strelka (right)
+        ctx.moveTo(rightX - 10, rightY)
+        ctx.lineTo(rightX + 10, rightY)
+        ctx.moveTo(rightX + 2, rightY - 8)
+        ctx.lineTo(rightX + 10, rightY)
+        ctx.lineTo(rightX + 2, rightY + 8)
+        ctx.stroke()
       }
 
       // Draw progress indicator
