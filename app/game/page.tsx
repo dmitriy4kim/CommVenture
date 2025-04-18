@@ -65,8 +65,8 @@ export default function GamePage() {
 
   if (showIntro && gameState.playerName) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
-        <header className="border-b bg-white">
+      <div className="min-h-screen bg-[#77c042]">
+        <header className="border-b bg-neutral-800">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-10 h-10 sm:w-12 sm:h-12">
@@ -78,7 +78,7 @@ export default function GamePage() {
                   priority
                 />
               </div>
-              <span className="font-bold text-lg sm:text-xl">CommVenture</span>
+              <span className="font-bold text-white text-lg sm:text-xl">CommVenture</span>
             </Link>
           </div>
         </header>
@@ -101,13 +101,13 @@ export default function GamePage() {
 
                 <div className="prose max-w-none">
                   <p className="text-center text-lg">
-                    In this interactive experience, you wll navigate through a series of checkpoints to test your
+                    In this interactive experience, you will navigate through a series of checkpoints to test your
                     knowledge of the IT Community rules and guidelines.
                   </p>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200 hover:cursor-pointer hover:scale-103 transition-transform duration-300">
                     <h3 className="font-medium text-green-800 flex items-center text-lg mb-2">
                       <Trophy className="h-5 w-5 mr-2" /> Your Mission
                     </h3>
@@ -131,7 +131,7 @@ export default function GamePage() {
                     </ul>
                   </div>
 
-                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 hover:cursor-pointer hover:scale-103 transition-transform duration-300">
                     <h3 className="font-medium text-amber-800 flex items-center text-lg mb-2">
                       <BookOpen className="h-5 w-5 mr-2" /> Controls
                     </h3>
@@ -156,7 +156,7 @@ export default function GamePage() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200  hover:cursor-pointer hover:scale-101 transition-transform duration-300">
                   <p className="text-blue-800 text-sm">
                     <strong>Note:</strong> This game is designed to test your knowledge of the IT Community rules. If
                     you haven not reviewed them yet, you can go back to the onboarding page to study them before starting.
@@ -164,13 +164,13 @@ export default function GamePage() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between border-t pt-6">
-                <Button variant="outline" asChild>
+                <Button variant="outline" className="bg-[#77c042] text-white hover:bg-[#77c042] hover:text-white" asChild>
                   <Link href="/onboarding">
-                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to Onboarding
+                    <ArrowLeft className=" h-4 w-4" />  Onboarding
                   </Link>
                 </Button>
-                <Button onClick={handleStartGame} className="px-8">
-                  Start Adventure
+                <Button onClick={handleStartGame} className="px-8 cursor-pointer">
+                  Start Game
                 </Button>
               </CardFooter>
             </Card>
@@ -184,8 +184,8 @@ export default function GamePage() {
     const passed = gameState.score >= 7 // 70% to pass
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
-        <header className="border-b bg-white">
+      <div className="min-h-screen bg-[#77c042]">
+        <header className="border-b bg-neutral-800">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-10 h-10 sm:w-12 sm:h-12">
@@ -197,7 +197,7 @@ export default function GamePage() {
                   priority
                 />
               </div>
-              <span className="font-bold text-lg sm:text-xl">CommVenture</span>
+              <span className="font-bold text-white text-lg sm:text-xl">CommVenture</span>
             </Link>
           </div>
         </header>
@@ -262,12 +262,12 @@ export default function GamePage() {
                     <div className="p-6 bg-green-50 rounded-lg border border-green-200">
                       <p className="font-medium text-lg mb-2">Here is your Telegram group link:</p>
                       <a
-                        href="https://t.me/your_telegram_group"
+                        href="https://t.me/+IJD9iZO7WyNhYTk6"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 underline block mb-4 text-lg"
                       >
-                        https://t.me/your_telegram_group
+                        Click here
                       </a>
                       <p className="mb-2 text-gray-700">Copy and paste the following template when you join:</p>
                       <div className="bg-white p-4 rounded border text-sm font-mono">
@@ -308,7 +308,7 @@ export default function GamePage() {
                 )}
               </CardContent>
               <CardFooter className="flex justify-center border-t pt-6">
-                <Button onClick={() => router.push("/")} variant="outline">
+                <Button onClick={() => router.push("/")} variant="outline" className="bg-[#77c042] text-white hover:bg-[#77c042] hover:text-white cursor-pointer">
                   Return to Home
                 </Button>
               </CardFooter>
