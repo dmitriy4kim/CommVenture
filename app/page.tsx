@@ -244,6 +244,7 @@ export default function Home() {
                     alt="IT Community of Uzbekistan"
                     fill
                     style={{ objectFit: "contain" }}
+                    className="rounded-full"
                   />
                 </div>
                 <span className="font-bold">CommVenture</span>

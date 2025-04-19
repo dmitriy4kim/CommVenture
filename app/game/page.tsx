@@ -76,6 +76,7 @@ export default function GamePage() {
                   alt="IT Community of Uzbekistan"
                   fill
                   style={{ objectFit: "contain" }}
+                  className="rounded-full"
                   priority
                 />
               </div>

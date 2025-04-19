@@ -117,7 +117,7 @@ export default function OnboardingPage() {
                       </li>
                       <li className="flex items-start">
                         <ArrowRight className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>You will need to score at least 70% to receive the Telegram group link</span>
+                        <span>You will need to score 100% to receive the Telegram group link</span>
                       </li>
                     </ul>
                   </div>
@@ -215,7 +215,7 @@ export default function OnboardingPage() {
                       </li>
                       <li className="flex items-start">
                         <ArrowRight className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>Complete all checkpoints and score at least 70% to succeed</span>
+                        <span>Complete all checkpoints and score 100% to succeed</span>
                       </li>
                     </ul>
                   </div>

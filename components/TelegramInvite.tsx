@@ -94,16 +94,17 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
         <div className="relative bg-white p-4 rounded border border-gray-200 text-sm font-mono leading-relaxed">
           <b>Full Name:</b> {playerName} <br />
           <b>Short bio:</b> {bioText || "[Please fill in your bio]"} <br />
-          <b>Referred by:</b> {referredBy || "[Please fill in who referred you]"}
+          <b>Referred by:</b> {referredBy || "[Please fill in who referred you]"} <br />
 
           <button
             onClick={handleCopy}
-            className="absolute top-3 right-3 flex items-center gap-2 px-3 py-1.5 text-xs font-medium bg-green-600 text-white rounded hover:bg-green-700 transition"
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium bg-green-600 text-white rounded hover:bg-green-700 transition mt-2"
           >
             <ClipboardCopy size={16} />
             {copied ? "Copied!" : "Copy"}
           </button>
         </div>
+
       </div>
     </div>
   );
