@@ -39,6 +39,7 @@ export default function OnboardingPage() {
                 alt="IT Community of Uzbekistan"
                 fill
                 style={{ objectFit: "contain" }}
+                className="rounded-full"
                 priority
               />
             </div>
@@ -68,7 +69,7 @@ export default function OnboardingPage() {
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-6 relative w-64 h-24">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/it_community.png"
                       alt="IT Community of Uzbekistan"
                       fill
                       style={{ objectFit: "contain" }}

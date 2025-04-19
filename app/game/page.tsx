@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { checkpoints, type GameState } from "@/lib/game-data"
 import Confetti from "@/components/confetti"
-import { ArrowLeft, Trophy, BookOpen, CheckCircle, GamepadIcon as GameController } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { ArrowLeft, Trophy, BookOpen, CheckCircle, GamepadIcon as GameController} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import TelegramInvite from "@/components/TelegramInvite"
 
 export default function GamePage() {
+  
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
   const [gameState, setGameState] = useState<GameState>({
@@ -126,7 +127,7 @@ export default function GamePage() {
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 mr-2 mt-0.5" />
-                        <span>Earn at least 7 points to get the Telegram link</span>
+                        <span>Earn 10 points to get the Telegram link</span>
                       </li>
                     </ul>
                   </div>
@@ -181,7 +182,7 @@ export default function GamePage() {
   }
 
   if (gameState.gameCompleted) {
-    const passed = gameState.score >= 7 // 70% to pass
+    const passed = gameState.score == 10 
 
     return (
       <div className="min-h-screen bg-[#77c042]">
@@ -194,6 +195,7 @@ export default function GamePage() {
                   alt="IT Community of Uzbekistan"
                   fill
                   style={{ objectFit: "contain" }}
+                  className="rounded-full"
                   priority
                 />
               </div>
@@ -223,66 +225,17 @@ export default function GamePage() {
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
                 {passed ? (
-                  <div className="space-y-6">
-                    <p className="text-center text-lg">
-                      You have successfully completed the CommVenture challenge! You are now ready to join our volunteer
-                      community.
-                    </p>
-
-                    <div className="space-y-4">
-                      <h3 className="font-medium text-lg">Please prepare your introduction:</h3>
-
-                      <div>
-                        <label htmlFor="bioText" className="text-sm font-medium block mb-1">
-                          Short bio:
-                        </label>
-                        <textarea
-                          id="bioText"
-                          rows={3}
-                          className="w-full p-2 border rounded-md"
-                          placeholder="Tell us a bit about yourself..."
-                          value={bioText}
-                          onChange={(e) => setBioText(e.target.value)}
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="referredBy" className="text-sm font-medium block mb-1">
-                          Referred by (Name and Telegram username):
-                        </label>
-                        <Input
-                          id="referredBy"
-                          placeholder="e.g. John Smith (@johnsmith)"
-                          value={referredBy}
-                          onChange={(e) => setReferredBy(e.target.value)}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="p-6 bg-green-50 rounded-lg border border-green-200">
-                      <p className="font-medium text-lg mb-2">Here is your Telegram group link:</p>
-                      <a
-                        href="https://t.me/+IJD9iZO7WyNhYTk6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline block mb-4 text-lg"
-                      >
-                        Click here
-                      </a>
-                      <p className="mb-2 text-gray-700">Copy and paste the following template when you join:</p>
-                      <div className="bg-white p-4 rounded border text-sm font-mono">
-                        <b>Full Name:</b> {gameState.playerName}
-                        <br />
-                        <b>Short bio:</b> {bioText || "[Please fill in your bio]"}
-                        <br />
-                        <b>Referred by:</b> {referredBy || "[Please fill in who referred you]"}
-                      </div>
-                    </div>
-                  </div>
+                  <TelegramInvite
+                  playerName={gameState.playerName}
+                  bioText={bioText}
+                  setBioText={setBioText}
+                  referredBy={referredBy}
+                  setReferredBy={setReferredBy}
+                />
                 ) : (
                   <div className="space-y-6">
                     <p className="text-center text-lg">
-                      You need to score at least 7 points to join our volunteer community. Do not worry, you can try
+                      You need to score 10 points to join our volunteer community. Do not worry, you can try
                       again!
                     </p>
                     <div className="flex justify-center">

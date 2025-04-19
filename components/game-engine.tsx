@@ -283,7 +283,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         // Up arrow
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowup"] ? 0.7 : alpha})`
         ctx.beginPath()
-        ctx.arc(canvas.width - margin - controlSize * 1.5, canvas.height - margin - controlSize * 2, controlSize/2, 0, Math.PI * 2)
+        ctx.arc(canvas.width - margin - controlSize * 1.5, canvas.height - margin - controlSize * 1.5, controlSize/2, 0, Math.PI * 2)
         ctx.fill()
         
         // Up arrow strelka
@@ -291,7 +291,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         ctx.strokeStyle = "white"
         ctx.lineWidth = 2
         const upX = canvas.width - margin - controlSize * 1.5
-        const upY = canvas.height - margin - controlSize * 2
+        const upY = canvas.height - margin - controlSize * 1.5
         // Strelka (up)
         ctx.moveTo(upX, upY + 10)
         ctx.lineTo(upX, upY - 10)
@@ -365,7 +365,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
       const progressWidth = canvas.width * 0.8
       const progressHeight = 10
       const progressX = (canvas.width - progressWidth) / 2
-      const progressY = 20
+      const progressY = 50
 
       // Background
       ctx.fillStyle = "#e5e7eb"
@@ -633,7 +633,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
       )}
 
       <div className="absolute bottom-4 left-4 text-xs text-gray-600">
-        Use WASD or arrow keys to move. On mobile, use the virtual controls.
+        Use WASD or arrow keys to move. <br /> On mobile, use the virtual controls.
       </div>
     </div>
   )

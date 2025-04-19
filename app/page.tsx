@@ -13,6 +13,7 @@ export default function Home() {
               <Image
                 src="/images/logo.png"
                 alt="IT Community of Uzbekistan"
+                className="rounded-full"
                 fill
                 style={{ objectFit: "contain" }}
                 priority
