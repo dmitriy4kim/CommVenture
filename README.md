@@ -13,7 +13,6 @@
 - Easy copy-to-clipboard function for user data
 - Smooth and responsive UI
 
-> ⚠️ Note: The platform currently includes only basic functionality and is intended for internal use.
 
 ---
 
@@ -29,9 +28,6 @@ This project was developed using:
 
 ---
 
-## 📸 Screenshots
-
-> You can add screenshots of the project here. Example:
 
 
 ---
@@ -54,4 +50,5 @@ This project is open-source. A specific license has not been added yet — feel 
 
 ---
 
-### Made with ❤️ by the CommVenture Team
+ ## Made with ❤️ for the IT Community of Uzbekistan
+
