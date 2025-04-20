@@ -153,16 +153,16 @@ export interface Checkpoint {
       id: 9,
       x: 1800,
       y: 200,
-      question: "What is Roman known for in the group?",
+      question: "Can you congratulate people in the UZ IT COMMUNITY chat with birthdays or holidays?",
       options: [
-        "Being the oldest member",
-        "Creating the most innovative projects",
-        "Being the head of the 2G Community",
-        "Being the most humble and handsome person (as he always says)",
+        "Only if it relates to IT COMMUNITY leaders.",
+        "Sure, but only with Shavkat aka's permission.",
+        "Yes, any topic is welcome",
+        "Unfortunately, no. ",
       ],
-      correctAnswer: "Being the most humble and handsome person (as he always says)",
+      correctAnswer: "Unfortunately, no. ",
       explanation:
-        "Roman used to jokingly call himself the most humble and handsome person, and then everyone picked this up. Now he's known by everyone as the most handsome and humble person (as he always says).",
+        "Because it floods the chat with identical messages, we are just too big now. But we have an open-source chat for that.",
     },
     {
       id: 10,
