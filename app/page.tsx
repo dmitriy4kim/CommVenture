@@ -1,8 +1,8 @@
+'use client'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, BookOpen, Trophy } from "lucide-react"
 import Image from "next/image"
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">

@@ -26,7 +26,19 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
   const checkpointImageRef = useRef<HTMLImageElement | null>(null)
   const completedCheckpointImageRef = useRef<HTMLImageElement | null>(null)
   const mapRef = useRef({ offsetX: 0, offsetY: 0 })
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(true); // Default: audio is playing
 
+  const handleToggle = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause(); // Pause if playing
+      } else {
+        audioRef.current.play(); // Play if paused
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
   useEffect(() => {
     // Load character image
     const characterImg = new Image()
@@ -396,7 +408,6 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
       ctx.font = "14px Arial"
       ctx.textAlign = "right"
       ctx.textBaseline = "top"
-      ctx.fillText(`Score: ${gameState.score}/${gameState.maxScore}`, canvas.width - 20, 20)
 
       animationFrameId = requestAnimationFrame(render)
     }
@@ -572,6 +583,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
   }
 
   return (
+    
     <div className="relative w-full h-full">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full touch-none" />
 
@@ -632,8 +644,23 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         </div>
       )}
 
-      <div className="absolute bottom-4 left-4 text-xs text-gray-600">
+      <div className="absolute bottom-4 left-4 text-xs text-gray-600 hidden sm:block">
         Use WASD or arrow keys to move. <br /> On mobile, use the virtual controls.
+      </div>
+      
+      <div className="relative">
+      <audio ref={audioRef} autoPlay loop className="hidden">
+        <source src="/musics/uzmuz.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Button to control audio */}
+      <button
+        onClick={handleToggle}
+        className=" cursor-pointer absolute top-3 right-4 p-1 px-3 rounded-full bg-[#10B981] text-white rounded"
+      >
+        {isPlaying ? '🔊 On' : ' 🔇Off'}
+      </button>
       </div>
     </div>
   )
