@@ -50,5 +50,6 @@ This project is open-source. A specific license has not been added yet — feel 
 
 ---
 
- ## Made with ❤️ for the IT Community of Uzbekistan
+ ##<h3>Made with ❤️ for the <span style="color:green;">IT Community of Uzbekistan</span></h3>
+
 
