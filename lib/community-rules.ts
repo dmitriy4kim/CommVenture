@@ -1,83 +1,57 @@
 export const communityRules = [
     {
-      question: 'Is this group the "IT Community of Uzbekistan"?',
-      answer: 'No, this is a volunteers\' chat of "IT Community of Uzbekistan".',
+      question: '💬 What is this group for?',
+      answer: 'This is not the main group of the IT Community of Uzbekistan — it is a space for volunteers to collaborate and communicate. If you’re here, you’re one of us — welcome!',
     },
     {
-      question: "Can I send IT-related posts to the UZ IT COMMUNITY chat?",
+      question: "🔑 Name, Username & Identity",
       answer:
-        "Unfortunately, no. The chat is for volunteers and their communication. If the content you want to share is not directly affiliated with the \"IT Community of Uzbekistan\" or Shavkat Karimov(@pulsopros), it's best not to post it without Shavkat aka's permission.",
+        `Use your real full name (Firstname Lastname) in Latin letters, default font.
+         Username is required — it helps us communicate and tag each other easily.`
     },
     {
-      question: "Can I post pictures from an event I visited?",
+      question: "📣 Communication Tips",
       answer:
-        "First, ask yourself, is our community affiliated (or partnered) with this event? If no, it's better not to post it without Shavkat aka's permission. We have an open-source chat where you can post whatever you want (within ethical limits).",
+        "Please avoid sending just “hi” or “how are you.” Instead, write your full message right away. Why? Read this → aka.ms/nohello",
     },
     {
-      question: "Can I send an invitation to an event I'm organizing to the UZ IT COMMUNITY chat?",
+      question: "🧑‍🤝‍🧑 Keling Tanishaylik Bot",
       answer:
-        "Unfortunately, no. Unless this event has IT Community of Uzbekistan as co-organizers or you have Shavkat aka's permission, we will not allow it to be posted in our chat.",
+        "This bot helps volunteers meet and connect (in-person or online). To participate: 1. Vote “yes” when Shavkat aka sends the poll in the chat. 2. Start the bot (just press Start and keep the chat open).",
     },
     {
-      question: "Can I post vacancies in my company, startup or hackathon team?",
+      question: "🎉 Can I congratulate someone here?",
       answer:
-        "Unfortunately, no. You should either ask Shavkat aka's (@pulsopros) permission or your vacancy should be exclusive to our volunteers (e.g., an internship which only considers volunteers of IT Community of Uzbekistan).",
+        "We love celebrations! But to avoid message overload, birthdays, holidays, and personal wishes belong in our open-source chat.",
     },
     {
-      question: "Can I add my friend to the group?",
+      question: "🚫 Topics to avoid",
       answer:
-        "Unfortunately, no. Every member should be selected by the admins. You can ask your friend to message admins like Shavkat aka(@pulsopros) or other admins for the selection process.",
+        "Please don’t discuss politics, religion, or personal life details here. Let’s stay focused on collaboration and volunteering.",
     },
     {
-      question: 'Why shouldn\'t I just send "hello" or "how are you"?',
-      answer: "Write everything you want to say in one message. For more information, visit aka.ms/nohello",
+      question: '🧺 What is Bazaar Day?',
+      answer: "Every last Sunday of the month, you can promote your: Social media, Blogs, Side projects. This is your day to shine — just keep it relevant and respectful!",
     },
     {
-      question: "What is 2G community?",
+      question: "⏰ Discipline = Success",
       answer:
-        "It started as a joke when Roman (@smart_proger_go) replied to an old message. The 2G Community is full of fun—we congratulate each other on long-past holidays, greet new members who joined ages ago, discuss past events, and embrace the slow vibe. Roman became the head of the 2G Community.",
+        "We value reliability and responsibility. If you’ve committed to something, follow through. Always be on time — ideally, 15 minutes early. That’s the easiest way never to be late 😉",
     },
     {
-      question: "Why is Roman the most humble and handsome person in the group?",
+      question: "📩 This chat is not for outside announcements or promotions",
       answer:
-        "He used to jokingly call himself so, and then everyone picked this up, and now he's known by everyone as the most handsome and humble person (as he always says).",
+        " Please read carefully: IT-related content (posts, links, media): Only allowed if directly related to the IT Community of Uzbekistan or coordinated by @pulsopros (Shavkat aka). Event photos or invitations: Only post if the event was officially co-organized with the community. Not sure? Ask Shavkat first. Job or internship offers: Only allowed if exclusively for our volunteers or approved by Shavkat aka. Personal promotions (e.g. blog, podcast, course): Please wait for Bazaar Day (last Sunday of each month) to share.",
     },
     {
-      question: "What is Keling Tanishaylik bot?",
+      question: "👥 How can I add my friends to the group?",
       answer:
-        "This is a bot for helping the volunteers to network with each other. Every week (sometimes once in 2-3 weeks) Shavkat aka(@pulsopros) launches the bot which matches a team of people together for networking.",
+        "Ask your friend to message one of our admins: @pulsopros, @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova, or @MSA1005. They’ll guide them through the selection process..",
     },
     {
-      question: "How can I participate in Keling Tanishaylik bot?",
-      answer:
-        '1) Vote "yes" in the Keling Tanishaylik poll in the group chat. 2) Press "start" in the bot and don\'t delete the chat with the bot.',
+      question: "🧃Bonus: What's the 2G Community?",
+      answer: "Once, Roman (@smart_proger_go) replied to a very old message, and someone joked his internet was on 2G. Since then, “2G Community” became a running gag for those who react late, greet too slowly, or celebrate old news. It's all in good fun 😉..",
     },
-    {
-      question: "Can you congratulate people in the UZ IT COMMUNITY chat with birthdays or holidays?",
-      answer:
-        "Unfortunately, no. Because it floods the chat with identical messages, we are just too big now. But we have an open-source chat for that.",
-    },
-    {
-      question: "Can you discuss anything related to politics, religion, private lives of people, etc?",
-      answer: "Unfortunately, no. Keep it relevant to what we do as a team.",
-    },
-    {
-      question: 'Does "IT Community of Uzbekistan" have rules?',
-      answer: "Yes. We have official rules that are relevant to our work chat as well.",
-    },
-    {
-      question: "My Telegram profile name and surname have to be real?",
-      answer:
-        'Yes. Your display name has to be in the "Firstname Lastname" format, not the other way around, in Latin letters and using default font.',
-    },
-    {
-      question: "Do I have to have a username?",
-      answer: "Yes. It is for easier communication. Username is important for tagging and mentioning.",
-    },
-    {
-      question: 'What is "Bazaar Day"?',
-      answer:
-        'Every last Sunday of the month, we have "Bazaar Day" or "Shameless Self-Promotion Day", on this day, you can post your social media links, links to your private blogs etc.',
-    },
+    
   ]
   
