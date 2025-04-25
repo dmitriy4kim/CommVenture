@@ -220,17 +220,22 @@ export default function Home() {
         {/* CTA Section */}
         <section className="py-16 bg-[#77c042] text-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-4">Ready to Join Our Community?</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-4">Explore the Official  IT Community of Uzbekistan</h2>
             <p className="text-xl max-w-[700px] mx-auto mb-8 text-green-50">
-              Start your journey today and become part of the IT Community of Uzbekistan volunteer team
+              Discover opportunities, resources, and connect with IT professionals across Uzbekistan on the official platform.
             </p>
-            <Link href="/onboarding">
+            <a
+              href="https://itcom.uz/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100 cursor-pointer">
-                Begin Your Adventure <ArrowRight className="ml-2 h-4 w-4" />
+                Visit Official Site <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </a>
           </div>
         </section>
+
       </main>
 
       <footer className="bg-neutral-800 text-white py-12">
