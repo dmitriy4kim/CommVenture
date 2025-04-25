@@ -55,7 +55,7 @@ export interface Checkpoint {
         "Every member should be selected by the admins",
         "Only if they're IT professionals",
       ],
-      correctAnswer: "No, every member should be selected by the admins",
+      correctAnswer: "Every member should be selected by the admins",
       explanation:
         "Every member should be selected by the admins. You can ask your friend to message admins like Shavkat aka for the selection process.",
     },
