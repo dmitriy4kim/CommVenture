@@ -52,7 +52,7 @@ export interface Checkpoint {
       options: [
         "Yes, anyone can add new members",
         "Yes, but only on Bazaar Day",
-        "No, every member should be selected by the admins",
+        "Every member should be selected by the admins",
         "Only if they're IT professionals",
       ],
       correctAnswer: "No, every member should be selected by the admins",
