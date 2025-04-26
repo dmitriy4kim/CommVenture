@@ -70,7 +70,7 @@ export default function Home() {
         <section className="py-16 bg-neutral-800">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl  tracking-tighter sm:text-4xl md:text-5xl text-white">How CommVenture Works</h2>
+              <h2 className="text-3xl  tracking-tighter sm:text-4xl md:text-5xl text-white font-bold">How CommVenture Works</h2>
               <p className="mt-4 text-xl text-white max-w-[700px] mx-auto">
                 An engaging, interactive experience designed to prepare you for volunteering with the IT Community of
                 Uzbekistan
@@ -115,7 +115,7 @@ export default function Home() {
         <section className="py-16 bg-[#77c042]">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl  tracking-tighter sm:text-4xl md:text-5xl text-white">What is the IT Community for you?</h2>
+              <h2 className="text-3xl  tracking-tighter sm:text-4xl md:text-5xl text-white font-bold">What benefits you can get from the IT community?</h2>
               <p className="mt-4 text-xl text-white max-w-[700px] mx-auto">
                 The IT Community is a space where tech enthusiasts grow, connect, and support each other.
               </p>
@@ -224,15 +224,35 @@ export default function Home() {
             <p className="text-xl max-w-[700px] mx-auto mb-8 text-green-50">
               Discover opportunities, resources, and connect with IT professionals across Uzbekistan on the official platform.
             </p>
-            <a
-              href="https://itcom.uz/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100 cursor-pointer">
-                Visit Official Site <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://itcom.uz/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-white text-green-600 hover:bg-gray-100 cursor-pointer"
+                >
+                  Visit Official Site <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              
+              <a
+                href="/onboarding"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-white text-green-600 hover:bg-gray-100 cursor-pointer"
+                >
+                  Start Your Journey <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+            </div>
+
           </div>
         </section>
 
