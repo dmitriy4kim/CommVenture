@@ -17,7 +17,7 @@ export const communityRules = [
     {
       question: "🧑‍🤝‍🧑 Keling Tanishaylik Bot",
       answer:
-        "This bot helps volunteers meet and connect (in-person or online). To participate: 1. Vote “yes” when Shavkat aka sends the poll in the chat. 2. Start the bot (just press Start and keep the chat open).",
+        "This bot helps volunteers meet and connect (in-person or online). To participate: \n• Vote “yes” when Shavkat aka sends the poll in the chat. \n• Start the bot (just press Start and keep the chat open).",
     },
     {
       question: "🎉 Can I congratulate someone here?",
