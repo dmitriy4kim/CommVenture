@@ -27,6 +27,33 @@ export default function OnboardingPage() {
     localStorage.setItem("commventure_player_name", playerName)
     router.push("/game")
   }
+  function renderAnswer(answer: string | string[]) {
+    if (Array.isArray(answer)) {
+      return (
+        <ul className="list-disc pl-5 space-y-1">
+          {answer.map((line, i) => (
+            <li key={i}>{line}</li>
+          ))}
+        </ul>
+      )
+    }
+  
+    const lines = answer.split('\n').map(line => line.trim()).filter(Boolean)
+    const hasBullets = lines.some(line => line.startsWith('•') || line.startsWith('-'))
+  
+    if (hasBullets) {
+      return (
+        <ul className="list-disc pl-5 space-y-1">
+          {lines.map((line, i) => (
+            <li key={i}>{line.replace(/^[-•]\s*/, '')}</li> // remove bullet sign
+          ))}
+        </ul>
+      )
+    }
+  
+    return <p>{answer}</p>
+  }
+  
 
   return (
     <div className="min-h-screen bg-[#77c042]">
@@ -146,14 +173,17 @@ export default function OnboardingPage() {
                 </CardHeader>
                 <CardContent className="max-h-[60vh] overflow-y-auto cursor-pointer">
                   <div className="space-y-6">
-                    {communityRules.map((rule, index) => (
-                      <div key={index} className="p-5 bg-white rounded-lg shadow-sm border">
-                        <p className="font-medium text-gray-900 mb-2 text-lg">{rule.question}</p>
-                        <p className="text-gray-600">{rule.answer}</p>
-                      </div>
-                    ))}
+                        {communityRules.map((rule, index) => (
+                            <div key={index} className="p-5 bg-white rounded-lg shadow-sm border">
+                                <p className="font-medium text-gray-900 mb-2 text-lg">{rule.question}</p>
+                                    <div className="text-gray-600">
+                                        {renderAnswer(rule.answer)}
+                                    </div>
+                            </div>
+                        ))}
                   </div>
-                </CardContent>
+              </CardContent>
+
                 <CardFooter className="flex justify-between">
                   <Button variant="outline" className=" cursor-pointer bg-[#77c042] text-white hover:bg-[#77c045] hover:text-white" onClick={() => setActiveTab("welcome")}>
                     <ArrowLeft className="mr-2 h-4 w-4 " /> Back
