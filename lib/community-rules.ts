@@ -46,11 +46,11 @@ export const communityRules = [
     {
       question: "👥 How can I add my friends to the group?",
       answer:
-        "Ask your friend to message one of our admins: @pulsopros, @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova, or @MSA1005. They’ll guide them through the selection process..",
+        "Ask your friend to message one of our admins: @pulsopros, @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova, or @MSA1005. They’ll guide them through the selection process",
     },
     {
       question: "🧃Bonus: What's the 2G Community?",
-      answer: "Once, Roman (@smart_proger_go) replied to a very old message, and someone joked his internet was on 2G. Since then, “2G Community” became a running gag for those who react late, greet too slowly, or celebrate old news. It's all in good fun 😉..",
+      answer: "Once, Roman (@smart_proger_go) replied to a very old message, and someone joked his internet was on 2G. Since then, “2G Community” became a running gag for those who react late, greet too slowly, or celebrate old news. It's all in good fun 😉",
     },
     
   ]
