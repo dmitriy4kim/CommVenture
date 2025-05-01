@@ -39,20 +39,49 @@ export default function OnboardingPage() {
     }
   
     const lines = answer.split('\n').map(line => line.trim()).filter(Boolean)
-    const hasBullets = lines.some(line => line.startsWith('•') || line.startsWith('-'))
   
-    if (hasBullets) {
-      return (
-        <ul className="list-disc pl-5 space-y-1">
-          {lines.map((line, i) => (
-            <li key={i}>{line.replace(/^[-•]\s*/, '')}</li> // remove bullet sign
-          ))}
-        </ul>
-      )
+    const blocks: { type: 'paragraph' | 'list'; content: string[] }[] = []
+    let currentList: string[] = []
+  
+    for (const line of lines) {
+      if (line.startsWith('•') || line.startsWith('-')) {
+        currentList.push(line.replace(/^[-•]\s*/, ''))
+      } else {
+        if (currentList.length > 0) {
+          blocks.push({ type: 'list', content: currentList })
+          currentList = []
+        }
+        blocks.push({ type: 'paragraph', content: [line] })
+      }
     }
   
-    return <p>{answer}</p>
+    if (currentList.length > 0) {
+      blocks.push({ type: 'list', content: currentList })
+    }
+  
+    return (
+      <div className="space-y-2 mt-1">
+        {blocks.map((block, i) => {
+          if (block.type === 'paragraph') {
+            return block.content.map((text, j) => (
+              <p key={`p-${i}-${j}`} className="text-sm leading-relaxed">
+                {text}
+              </p>
+            ))
+          } else {
+            return (
+              <ul key={`ul-${i}`} className="list-disc pl-5 space-y-1">
+                {block.content.map((item, j) => (
+                  <li key={`li-${i}-${j}`}>{item}</li>
+                ))}
+              </ul>
+            )
+          }
+        })}
+      </div>
+    )
   }
+  
   
 
   return (

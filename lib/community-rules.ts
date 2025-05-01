@@ -41,7 +41,7 @@ export const communityRules = [
     {
       question: "📩 This chat is not for outside announcements or promotions",
       answer:
-        " Please read carefully: IT-related content (posts, links, media): \n•Only allowed if directly related to the IT Community of Uzbekistan or coordinated by @pulsopros (Shavkat aka). \n•Event photos or invitations: Only post if the event was officially co-organized with the community. Not sure? Ask Shavkat first. \n•Job or internship offers: Only allowed if exclusively for our volunteers or approved by Shavkat aka. \n•Personal promotions (e.g. blog, podcast, course): Please wait for Bazaar Day (last Sunday of each month) to share.",
+        "Please read carefully: IT-related content (posts, links, media): \n•Only allowed if directly related to the IT Community of Uzbekistan or coordinated by @pulsopros (Shavkat aka). \n•Event photos or invitations: Only post if the event was officially co-organized with the community. Not sure? Ask Shavkat first. \n•Job or internship offers: Only allowed if exclusively for our volunteers or approved by Shavkat aka. \n•Personal promotions (e.g. blog, podcast, course): Please wait for Bazaar Day (last Sunday of each month) to share.",
     },
     {
       question: "👥 How can I add my friends to the group?",
