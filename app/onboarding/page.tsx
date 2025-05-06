@@ -234,7 +234,8 @@ export default function OnboardingPage() {
                 <CardContent className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="playerName" className="text-sm font-medium block">
-                      Enter your full name (First & Last Name)
+                      Enter your full name (First & Last Name) 
+                      <h2><strong>Please use your own name, not a nickname!</strong></h2>
                     </label>
                     <Input
                       id="playerName"
