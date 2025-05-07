@@ -31,6 +31,7 @@ export default function GamePage() {
   const [showConfetti, setShowConfetti] = useState(false)
   const [bioText, setBioText] = useState("")
   const [referredBy, setReferredBy] = useState("")
+  const [, setGameFailed] = useState(false)
 
   useEffect(() => {
     // Load player name from localStorage
@@ -51,6 +52,10 @@ export default function GamePage() {
   const handleGameComplete = () => {
     setShowConfetti(true)
     setGameState((prev) => ({ ...prev, gameCompleted: true }))
+  }
+
+  const handleGameFail = () => {
+    setGameFailed(true)
   }
 
   if (isLoading) {
@@ -276,7 +281,7 @@ export default function GamePage() {
   return (
     <div className="fixed inset-0">
       {gameState && (
-        <GameEngine gameState={gameState} setGameState={setGameState} onGameComplete={handleGameComplete} />
+        <GameEngine gameState={gameState} setGameState={setGameState} onGameComplete={handleGameComplete} onGameFail={handleGameFail} />
       )}
     </div>
   )
