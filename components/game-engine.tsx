@@ -7,20 +7,23 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import { Check, X } from "lucide-react"
+import { Check, X, RefreshCw, Home } from "lucide-react"
+import Link from "next/link"
 
 interface GameEngineProps {
   gameState: GameState
   setGameState: React.Dispatch<React.SetStateAction<GameState>>
   onGameComplete: () => void
+  onGameFail: () => void
 }
 
-const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGameComplete }) => {
+const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGameComplete, onGameFail }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [keys, setKeys] = useState<{ [key: string]: boolean }>({})
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [showResult, setShowResult] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
+  const [gameFailed, setGameFailed] = useState(false)
   const animationFrameRef = useRef<number>(0)
   const characterImageRef = useRef<HTMLImageElement | null>(null)
   const checkpointImageRef = useRef<HTMLImageElement | null>(null)
@@ -134,7 +137,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
   }, [])
 
   useEffect(() => {
-    if (!canvasRef.current || !gameState || gameState.currentCheckpoint) return
+    if (!canvasRef.current || !gameState || gameState.currentCheckpoint || gameFailed) return
 
     const canvas = canvasRef.current
     const ctx = canvas.getContext("2d")
@@ -291,7 +294,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         const controlSize = 50
         const margin = 20
         const alpha = 0.5
-      
+
         // Up arrow
         ctx.fillStyle = `rgba(79, 70, 229, ${keys["arrowup"] ? 0.7 : alpha})`
         ctx.beginPath()
@@ -418,7 +421,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
     return () => {
       cancelAnimationFrame(animationFrameId)
     }
-  }, [gameState, keys, setGameState])
+  }, [gameState, keys, setGameState, gameFailed])
 
   useEffect(() => {
     // Function to handle canvas resizing
@@ -540,12 +543,20 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
         ...prevState,
         score: prevState.score + 1,
       }))
+    } else {
+      // If answer is incorrect, set game failed state
+      setGameFailed(true)
+      // Call the onGameFail callback
+      onGameFail()
     }
   }
 
   // Handle continue after seeing result
   const handleContinue = () => {
     if (!gameState || !gameState.currentCheckpoint) return
+
+    // If the game has failed, don't continue
+    if (gameFailed) return
 
     setSelectedAnswer(null)
     setShowResult(false)
@@ -577,13 +588,27 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
     })
   }
 
+  // Handle game restart
+  const handleRestartGame = () => {
+    setGameFailed(false)
+    setShowResult(false)
+    setSelectedAnswer(null)
+    setGameState({
+      ...gameState,
+      currentPosition: { x: checkpoints[0].x, y: checkpoints[0].y },
+      completedCheckpoints: [],
+      currentCheckpoint: null,
+      score: 0,
+      gameCompleted: false,
+    })
+  }
+
   // If gameState is not defined, render a loading state
   if (!gameState) {
     return <div>Loading game...</div>
   }
 
   return (
-    
     <div className="relative w-full h-full">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full touch-none" />
 
@@ -634,11 +659,59 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
                 <Button onClick={handleSubmit} disabled={!selectedAnswer} className="w-full">
                   Submit Answer
                 </Button>
-              ) : (
+              ) : isCorrect ? (
                 <Button onClick={handleContinue} className="w-full">
                   Continue
                 </Button>
+              ) : (
+                <div className="w-full space-y-3">
+                  <p className="text-center text-red-600 font-medium">
+                    Game over! You must answer all questions correctly to continue.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button onClick={handleRestartGame} className="flex-1" variant="default">
+                      <RefreshCw className="mr-2 h-4 w-4" /> Try Again
+                    </Button>
+                    <Button asChild variant="outline" className="flex-1">
+                      <Link href="/">
+                        <Home className="mr-2 h-4 w-4" /> Return Home
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
               )}
+            </CardFooter>
+          </Card>
+        </div>
+      )}
+
+      {/* Game Failed Overlay - shown when not at a checkpoint but game has failed */}
+      {gameFailed && !gameState.currentCheckpoint && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10 p-4">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle className="text-xl sm:text-2xl text-center text-red-600">Game Over!</CardTitle>
+              <CardDescription className="text-center">
+                You must answer all questions correctly to complete the game.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4 text-center">
+                You answered incorrectly at checkpoint {gameState.completedCheckpoints.length + 1}.
+              </p>
+              <p className="mb-4 text-center">
+                Your score: {gameState.score}/{gameState.maxScore}
+              </p>
+            </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-3">
+              <Button onClick={handleRestartGame} className="flex-1" variant="default">
+                <RefreshCw className="mr-2 h-4 w-4" /> Try Again
+              </Button>
+              <Button asChild variant="outline" className="flex-1">
+                <Link href="/">
+                  <Home className="mr-2 h-4 w-4" /> Return Home
+                </Link>
+              </Button>
             </CardFooter>
           </Card>
         </div>
@@ -647,7 +720,6 @@ const GameEngine: React.FC<GameEngineProps> = ({ gameState, setGameState, onGame
       <div className="absolute bottom-4 left-4 text-xs text-gray-600 hidden sm:block">
         Use WASD or arrow keys to move. <br /> On mobile, use the virtual controls.
       </div>
-      
       <div className="relative">
       <audio ref={audioRef} autoPlay loop className="hidden">
         <source src="/musics/uzmuz.mp3" type="audio/mpeg" />
