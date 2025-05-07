@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, ClipboardCopy, ImagePlus } from "lucide-react";
+import { ArrowRight, ArrowLeft, ClipboardCopy} from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 type Props = {
@@ -72,33 +72,40 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
 
       {/* Sample Intro */}
       <div className="p-6 bg-blue-50 rounded-xl border border-blue-200 shadow-sm space-y-4">
-        <h4 className="font-semibold text-lg text-blue-800">✨ Sample Introduction:</h4>
+        <h4 className="font-semibold text-xl text-blue-800 text-center">✨ Sample Introduction:</h4>
 
-        <div className="flex items-start gap-4">
-          {/* Placeholder for profile picture */}
-          <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-            <ImagePlus size={32} />
-          </div>
-
-          <div className="text-sm leading-relaxed space-y-2">
-            <p>Hey everyone, I’m <strong>Atabek</strong>! 👋<br />
-              I’m 19 years old, born and raised in Nukus, Karakalpakstan — where the summers are scorching hot, and the sunsets look like they’re straight out of a painting. 🎨 Right now, I’m knee-deep in prep work for university (wish me luck!).
-            </p>
-            <p>
-              I’m a huge basketball fan 🏀 — you’ll usually find me practicing jump shots or playing pickup games with friends. Off the court, I run the <strong>Reclaim Project</strong>, where I organize clean-up drives and workshops to promote recycling and sustainability in my community. (Yes, I genuinely enjoy geeking out about eco-friendly solutions! 🌱)
-            </p>
-            <p>
-              Oh, and I love languages! I speak four (working on a fifth… shh), and I’m always down to swap slang or teach someone a Karakalpak phrase. 💬
-            </p>
-            <p>
-              Fun fact: I only started reading books seriously last year. My first real read was &quot;The Consumer Society&quot; — now I’m hooked on geeking out about philosophy and tech. 📚
-            </p>
-            <p>
-              Let’s connect!<br />
-              👉 LinkedIn: [link]
-            </p>
-          </div>
+        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto">
+          <img 
+            src="/images/ex_photo.png" 
+            alt="Profile" 
+            className="w-full h-full object-cover object-center "
+          />
         </div>
+        <div className="flex items-start gap-4">
+  {/* Profile picture */}
+
+
+
+        <div className="text-sm leading-relaxed space-y-2">
+          <p>Hey everyone, I’m <strong>Atabek</strong>! 👋<br />
+            I’m 19 years old, born and raised in Nukus, Karakalpakstan — where the summers are scorching hot, and the sunsets look like they’re straight out of a painting. 🎨 Right now, I’m knee-deep in prep work for university (wish me luck!).
+          </p>
+          <p>
+            I’m a huge basketball fan 🏀 — you’ll usually find me practicing jump shots or playing pickup games with friends. Off the court, I run the <strong>Reclaim Project</strong>, where I organize clean-up drives and workshops to promote recycling and sustainability in my community. (Yes, I genuinely enjoy geeking out about eco-friendly solutions! 🌱)
+          </p>
+          <p>
+            Oh, and I love languages! I speak four (working on a fifth… shh), and I’m always down to swap slang or teach someone a Karakalpak phrase. 💬
+          </p>
+          <p>
+            Fun fact: I only started reading books seriously last year. My first real read was &quot;The Consumer Society&quot; — now I’m hooked on geeking out about philosophy and tech. 📚
+          </p>
+          <p>
+            Let’s connect!<br />
+            👉 LinkedIn: [link]
+          </p>
+        </div>
+      </div>
+
       </div>
 
       {/* User's Intro Copy Section */}
