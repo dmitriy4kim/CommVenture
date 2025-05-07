@@ -72,7 +72,7 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
 
       {/* Sample Intro */}
       <div className="p-6 bg-blue-50 rounded-xl border border-blue-200 shadow-sm space-y-4">
-        <h4 className="font-semibold text-xl text-blue-800 ">✨ Sample Introduction:</h4>
+        <h4 className="font-semibold text-xl text-blue-800 ">✨ Example:</h4>
 
         <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto">
           <img 
