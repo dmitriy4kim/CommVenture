@@ -57,7 +57,7 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
 
           <div>
             <label htmlFor="referredBy" className="text-sm font-semibold block mb-1">
-              Referred by (Name and Telegram username):
+              Referred by (<span className="italic">Who invited you or shared this link with you? Name and Telegram username</span> ):
             </label>
             <Input
               id="referredBy"
@@ -99,6 +99,8 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
           <p>
             Fun fact: I only started reading books seriously last year. My first real read was &quot;The Consumer Society&quot; — now I’m hooked on geeking out about philosophy and tech. 📚
           </p>
+          <p>Referred by: [<span className="italic">Who invited you or shared this link with you?</span> ]</p>
+
           <p>
             Let’s connect!<br />
             👉 LinkedIn: [link]
