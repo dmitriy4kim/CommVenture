@@ -31,6 +31,7 @@ export default function GamePage() {
   const [showConfetti, setShowConfetti] = useState(false)
   const [bioText, setBioText] = useState("")
   const [referredBy, setReferredBy] = useState("")
+  const [addedBy, setaddedBy] = useState("")
   const [, setGameFailed] = useState(false)
 
   useEffect(() => {
@@ -237,6 +238,8 @@ export default function GamePage() {
                   setBioText={setBioText}
                   referredBy={referredBy}
                   setReferredBy={setReferredBy}
+                  addedBy = {addedBy}
+                  setaddedBy = {setaddedBy}
                 />
                 ) : (
                   <div className="space-y-6">

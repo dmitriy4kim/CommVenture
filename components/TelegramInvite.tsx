@@ -8,6 +8,8 @@ type Props = {
   setBioText: (text: string) => void;
   referredBy: string;
   setReferredBy: (text: string) => void;
+  addedBy: string
+  setaddedBy: (text: string) => void
 };
 
 export default function TelegramInvite({
@@ -16,12 +18,15 @@ export default function TelegramInvite({
   setBioText,
   referredBy,
   setReferredBy,
+  addedBy,
+  setaddedBy,
 }: Props) {
   const [copied, setCopied] = useState(false);
 
   const templateText = `Full Name: ${playerName}
 Short bio: ${bioText || "[Please fill in your bio]"}
-Referred by: ${referredBy || "[Please fill in who referred you]"}`;
+Referred by: ${referredBy || "[Please fill in who referred you]"}
+Added by: ${addedBy || "[Please fill in who referred you]"}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(templateText).then(() => {
@@ -57,14 +62,27 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
 
           <div>
             <label htmlFor="referredBy" className="text-sm font-semibold block mb-1">
-              Referred by (<span className="italic">Who invited you or shared this link with you? Name and Telegram username</span> ):
+              Referred by (<span className="italic">Who invited you to the community? Name and Telegram username</span> ):
             </label>
             <Input
               id="referredBy"
               placeholder="e.g. John Smith (@johnsmith)"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-3 mb-5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               value={referredBy}
               onChange={(e) => setReferredBy(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="addedBy" className="text-sm font-semibold block mb-1">
+              Added by (<span className="italic">Who shared the link to this game with you? Name and Telegram username</span> ):
+            </label>
+            <Input
+              id="addedBy"
+              placeholder="e.g. John Smith (@johnsmith)"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              value={addedBy}
+              onChange={(e) => setaddedBy(e.target.value)}
             />
           </div>
         </div>
@@ -119,6 +137,7 @@ Referred by: ${referredBy || "[Please fill in who referred you]"}`;
           <b>Full Name:</b> {playerName} <br />
           <b>Short bio:</b> {bioText || "[Please fill in your bio]"} <br />
           <b>Referred by:</b> {referredBy || "[Please fill in who referred you]"} <br />
+          <b>Added by:</b> {addedBy || "[Please fill in who added you]"} <br />
 
           <button
             onClick={handleCopy}
