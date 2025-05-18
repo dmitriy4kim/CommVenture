@@ -117,7 +117,8 @@ Added by: ${addedBy || "[Please fill in who referred you]"}`;
           <p>
             Fun fact: I only started reading books seriously last year. My first real read was &quot;The Consumer Society&quot; — now I’m hooked on geeking out about philosophy and tech. 📚
           </p>
-          <p>Referred by: [<span className="italic">Who invited you or shared this link with you?</span> ]</p>
+          <p>Referred by: [<span className="italic">Who shared the link to this game with you?</span> ]</p>
+          <p>Added by: [<span className="italic">Who invited you to the community?</span> ]</p>
 
           <p>
             Let’s connect!<br />
