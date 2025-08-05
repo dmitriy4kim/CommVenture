@@ -13,7 +13,6 @@
 - Easy copy-to-clipboard function for user data
 - Smooth and responsive UI
 
-
 ---
 
 ## 🛠 Built With
@@ -27,8 +26,6 @@ This project was developed using:
 - **Netlify** – hosting and deployment
 
 ---
-
-
 
 ---
 
@@ -51,5 +48,3 @@ This project is open-source. A specific license has not been added yet — feel 
 ---
 
  <h1>Made with ❤️ for the <span style="color:green;">IT Community of Uzbekistan</span></h1>
-
-
