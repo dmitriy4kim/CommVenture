@@ -169,26 +169,17 @@ export default function GamePage() {
                                         </h3>
                                         <ul className="text-sm text-amber-700 space-y-1.5">
                                             <li className="flex items-start">
-                                                <CheckCircle className="h-4 w-4 mr-2 mt-0.5" />
-                                                <span>Desktop: Use WASD or arrow keys to move</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <CheckCircle className="h-4 w-4 mr-2 mt-0.5" />
+                                                <CheckCircle className="mr-2 mt-0.5 h-4 w-4 shrink-0" />
                                                 <span>
-                                                    Mobile: Use the on-screen controls to move
+                                                    Answer questions correctly to progress through the game, then press
+                                                    <strong> Continue</strong> — your character will automatically walk to the
+                                                    next checkpoint while the path behind turns green.
                                                 </span>
                                             </li>
                                             <li className="flex items-start">
-                                                <CheckCircle className="h-4 w-4 mr-2 mt-0.5" />
+                                                <CheckCircle className="h-4 w-4 mr-2 mt-0.5 shrink-0" />
                                                 <span>
-                                                    Navigate to the green circles with question
-                                                    marks
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <CheckCircle className="h-4 w-4 mr-2 mt-0.5" />
-                                                <span>
-                                                    Answer questions to progress through the game
+                                                    <span>One wrong answer ends the run. Use <strong>Try Again</strong> to restart</span>
                                                 </span>
                                             </li>
                                         </ul>

@@ -335,13 +335,6 @@ export default function OnboardingPage() {
                                             <li className="flex items-start">
                                                 <ArrowRight className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
                                                 <span>
-                                                    Move your character using WASD or arrow keys
-                                                    (desktop) or on-screen controls (mobile)
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <ArrowRight className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
-                                                <span>
                                                     Visit each checkpoint (green circles) on the map
                                                 </span>
                                             </li>
