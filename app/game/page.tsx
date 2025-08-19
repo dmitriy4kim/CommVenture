@@ -99,7 +99,7 @@ export default function GamePage() {
                                 />
                             </div>
                             <span className="font-bold text-white text-lg sm:text-xl">
-                                CommVenture
+                                ITQuiz
                             </span>
                         </Link>
                     </div>
@@ -113,7 +113,7 @@ export default function GamePage() {
                                     Welcome, {gameState.playerName}!
                                 </CardTitle>
                                 <CardDescription className="text-lg">
-                                    You are about to embark on your CommVenture journey
+                                    You are about to embark on your ITQuiz journey
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="pt-6 space-y-6">
@@ -235,7 +235,7 @@ export default function GamePage() {
                                 />
                             </div>
                             <span className="font-bold text-white text-lg sm:text-xl">
-                                CommVenture
+                                ITQuiz
                             </span>
                         </Link>
                     </div>

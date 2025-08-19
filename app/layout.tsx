@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'CommVenture - IT Community Volunteer Onboarding',
+    title: 'ITQuiz - IT Community Volunteer Onboarding',
     description: 'Interactive onboarding experience for IT Community volunteers',
 };
 

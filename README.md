@@ -1,8 +1,8 @@
-# CommVenture
+# ITQuiz
 
-**CommVenture** is a volunteer onboarding platform created for the IT Community of Uzbekistan. It serves as a simple and effective way to introduce new volunteers to the community. Newcomers can fill in their details through this platform and may join the main group after passing an evaluation test.
+**ITQuiz** is a volunteer onboarding platform created for the IT Community of Uzbekistan. It serves as a simple and effective way to introduce new volunteers to the community. Newcomers can fill in their details through this platform and may join the main group after passing an evaluation test.
 
-🌐 **Live Demo:** [https://commventure.netlify.app](https://commventure.netlify.app)
+🌐 **Live Demo:** [https://itquiz.uz](https://itquiz.uz)
 
 ---
 

@@ -116,7 +116,7 @@ export default function OnboardingPage() {
                                 priority
                             />
                         </div>
-                        <span className="font-bold text-lg sm:text-xl text-white">CommVenture</span>
+                        <span className="font-bold text-lg sm:text-xl text-white">ITQuiz</span>
                     </Link>
                 </div>
             </header>
@@ -152,7 +152,7 @@ export default function OnboardingPage() {
                                         />
                                     </div>
                                     <CardTitle className="text-3xl mb-2">
-                                        Welcome to CommVenture
+                                        Welcome to ITQuiz
                                     </CardTitle>
                                     <CardDescription className="text-lg">
                                         Your interactive journey to becoming an IT Community
@@ -162,7 +162,7 @@ export default function OnboardingPage() {
                                 <CardContent className="space-y-6">
                                     <div className="prose max-w-none">
                                         <p>
-                                            CommVenture is an interactive onboarding experience
+                                            ITQuiz is an interactive onboarding experience
                                             designed to introduce you to the IT Community of
                                             Uzbekistan volunteer team. Through this engaging
                                             journey, you will learn about our community values,
@@ -292,7 +292,7 @@ export default function OnboardingPage() {
                                         Ready to Begin Your Journey?
                                     </CardTitle>
                                     <CardDescription>
-                                        Enter your information to start the CommVenture game
+                                        Enter your information to start the ITQuiz game
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="space-y-6">

@@ -25,9 +25,9 @@ export default function TelegramInvite({
     const [copied, setCopied] = useState(false);
 
     const templateText = `Full Name: ${playerName}
-Short bio: ${bioText || '[Please fill in your bio]'}
-Referred by: ${referredBy || '[Please fill in who referred you]'}
-Added by: ${addedBy || '[Please fill in who referred you]'}`;
+    Short bio: ${bioText || '[Please fill in your bio]'}
+    Referred by: ${referredBy || '[Please fill in who referred you]'}
+    Added by: ${addedBy || '[Please fill in who referred you]'}`;
 
     const handleCopy = () => {
         navigator.clipboard.writeText(templateText).then(() => {
@@ -40,7 +40,7 @@ Added by: ${addedBy || '[Please fill in who referred you]'}`;
         <div className="space-y-8 max-w-2xl mx-auto text-gray-800">
             <p className="text-center text-lg font-medium">
                 ✅ You have successfully completed the{' '}
-                <span className="text-green-600 font-semibold">CommVenture</span> challenge! <br />
+                <span className="text-green-600 font-semibold">ITQuiz</span> challenge! <br />
                 You are now ready to join our amazing volunteer community.
             </p>
 

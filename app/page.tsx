@@ -19,7 +19,7 @@ export default function Home() {
                                 priority
                             />
                         </div>
-                        <span className="font-bold text-lg text-white sm:text-xl">CommVenture</span>
+                        <span className="font-bold text-lg text-white sm:text-xl">ITQuiz</span>
                     </div>
                     <Link href="/onboarding">
                         <Button className="cursor-pointer bg-[#77c042] text-white hover:bg-[#77c042]">
@@ -36,7 +36,7 @@ export default function Home() {
                         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                             <div className="space-y-4">
                                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                                    Welcome to <span className="text-[#77c042]">CommVenture</span>
+                                    Welcome to <span className="text-[#77c042]">ITQuiz</span>
                                 </h1>
                                 <p className="text-xl text-gray-600 max-w-[600px]">
                                     Your interactive journey to becoming an IT Community volunteer
@@ -82,7 +82,7 @@ export default function Home() {
                     <div className="container mx-auto px-4 md:px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl  tracking-tighter sm:text-4xl md:text-5xl text-white font-bold">
-                                How CommVenture Works
+                                How ITQuiz Works
                             </h2>
                             <p className="mt-4 text-xl text-white max-w-[700px] mx-auto">
                                 An engaging, interactive experience designed to prepare you for
@@ -319,7 +319,7 @@ export default function Home() {
                                         className="rounded-full"
                                     />
                                 </div>
-                                <span className="font-bold">CommVenture</span>
+                                <span className="font-bold">ITQuiz</span>
                             </div>
                             <p className="text-gray-400 text-sm">
                                 An interactive onboarding experience for IT Community of Uzbekistan
