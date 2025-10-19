@@ -101,11 +101,10 @@ export default function TelegramInvite({
                 </div>
             </div>
 
-            {/* Sample Intro */}
             <div className="p-6 bg-blue-50 rounded-xl border border-blue-200 shadow-sm space-y-4">
                 <h4 className="font-semibold text-xl text-blue-800 ">✨ Example:</h4>
 
-                <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-lg overflow-hidden mx-auto">
                     <img
                         src="/images/ex_photo.png"
                         alt="Profile"
@@ -113,7 +112,6 @@ export default function TelegramInvite({
                     />
                 </div>
                 <div className="flex items-start gap-4">
-                    {/* Profile picture */}
 
                     <div className="text-sm leading-relaxed space-y-2">
                         <p>
@@ -161,7 +159,6 @@ export default function TelegramInvite({
                 </div>
             </div>
 
-            {/* User's Intro Copy Section */}
             <div className="p-6 bg-green-50 rounded-xl border border-green-200 shadow-sm space-y-4">
                 <p className="text-gray-700">
                     📝 Don&#39;t forget to <strong>copy</strong> and paste the following template with your{' '}
@@ -196,6 +193,25 @@ export default function TelegramInvite({
                         <ClipboardCopy size={16} />
                         {copied ? "Copied!" : "Copy"}
                     </motion.button>
+                </div>
+
+                <div
+                    role="note"
+                    className="relative overflow-hidden rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-amber-900 font-sans"
+                >
+
+                    <span className="pointer-events-none absolute -inset-y-10 -left-1/3 w-1/3 rotate-12 bg-white/60 blur-md animate-[sheen_1.1s_ease-in-out_infinite]" />
+                    <div className="flex items-start gap-3">
+                        <span className="mt-0.5 text-xl leading-none">⚠️</span>
+                        <div className="text-sm leading-relaxed">
+                            <p className="font-semibold tracking-tight">Attention</p>
+                            <ul className="mt-1 list-disc pl-5 space-y-1">
+                                <li>Your Telegram must have a public <span className="font-semibold">@username</span> (nickname).</li>
+                                <li>Set your display name in the format <span className="font-semibold">Firstname Lastname</span>.</li>
+                                <li>Use the default font — no emojis, symbols, or stylized fonts.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <p className="font-semibold text-lg text-green-800">✅ Your Telegram group link:</p>
