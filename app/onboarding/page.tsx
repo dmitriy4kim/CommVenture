@@ -162,11 +162,11 @@ export default function OnboardingPage() {
                                 <CardContent className="space-y-6">
                                     <div className="prose max-w-none">
                                         <p>
-                                            ITQuiz is an interactive onboarding experience
-                                            designed to introduce you to the IT Community of
-                                            Uzbekistan volunteer team. Through this engaging
-                                            journey, you will learn about our community values,
-                                            rules, and expectations.
+                                            ITQuiz is an interactive onboarding experience designed
+                                            to introduce you to the IT Community of Uzbekistan
+                                            volunteer team. Through this engaging journey, you will
+                                            learn about our community values, rules, and
+                                            expectations.
                                         </p>
 
                                         <h3>What to Expect</h3>

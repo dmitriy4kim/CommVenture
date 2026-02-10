@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft, ClipboardCopy } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
@@ -13,6 +13,8 @@ type Props = {
     setaddedBy: (text: string) => void;
 };
 
+type AgreementKey = 'introAndPhoto' | 'hasUsername' | 'displayNameFormat';
+
 export default function TelegramInvite({
     playerName,
     bioText,
@@ -23,6 +25,13 @@ export default function TelegramInvite({
     setaddedBy,
 }: Props) {
     const [copied, setCopied] = useState(false);
+    const [agreements, setAgreements] = useState<Record<AgreementKey, boolean>>({
+        introAndPhoto: false,
+        hasUsername: false,
+        displayNameFormat: false,
+    });
+
+    const allChecked = Object.values(agreements).every(Boolean);
 
     const templateText = `Full Name: ${playerName}
     Short bio: ${bioText || '[Please fill in your bio]'}
@@ -34,6 +43,10 @@ export default function TelegramInvite({
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         });
+    };
+
+    const toggleAgreement = (key: AgreementKey) => {
+        setAgreements((prev) => ({ ...prev, [key]: !prev[key] }));
     };
 
     return (
@@ -111,8 +124,8 @@ export default function TelegramInvite({
                         className="w-full h-full object-cover object-center "
                     />
                 </div>
-                <div className="flex items-start gap-4">
 
+                <div className="flex items-start gap-4">
                     <div className="text-sm leading-relaxed space-y-2">
                         <p>
                             Hey everyone, I’m <strong>Atabek</strong>! 👋
@@ -161,8 +174,8 @@ export default function TelegramInvite({
 
             <div className="p-6 bg-green-50 rounded-xl border border-green-200 shadow-sm space-y-4">
                 <p className="text-gray-700">
-                    📝 Don&#39;t forget to <strong>copy</strong> and paste the following template with your{' '}
-                    <strong className="underline">photo</strong> when you join:
+                    📝 Don&#39;t forget to <strong>copy</strong> and paste the following template
+                    with your <strong className="underline">photo</strong> when you join:
                 </p>
 
                 <div className="relative bg-white p-4 rounded border border-gray-200 text-sm font-mono leading-relaxed">
@@ -177,10 +190,10 @@ export default function TelegramInvite({
                         transition={{
                             duration: 1,
                             repeat: Infinity,
-                            repeatType: "reverse",
-                            ease: "easeInOut",
+                            repeatType: 'reverse',
+                            ease: 'easeInOut',
                         }}
-                        className='
+                        className="
                             flex items-center gap-2 ml-1
                             px-4 py-1.5 mt-4 text-sm
                             bg-gradient-to-r from-green-500 to-emerald-500
@@ -188,44 +201,82 @@ export default function TelegramInvite({
                             rounded-full shadow-lg hover:shadow-xl
                             transition-all duration-300 hover:scale-105
                             focus:ring-4 focus:ring-emerald-300 outline-none font-bold
-                        '
+                        "
                     >
                         <ClipboardCopy size={16} />
-                        {copied ? "Copied!" : "Copy"}
+                        {copied ? 'Copied!' : 'Copy'}
                     </motion.button>
                 </div>
 
-                <div
-                    role="note"
-                    className="relative overflow-hidden rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-amber-900 font-sans"
-                >
+                <div className="rounded-xl border border-amber-300 bg-amber-50 p-4 space-y-3">
+                    <p className="font-semibold text-amber-900">Before joining, confirm all:</p>
 
-                    <span className="pointer-events-none absolute -inset-y-10 -left-1/3 w-1/3 rotate-12 bg-white/60 blur-md animate-[sheen_1.1s_ease-in-out_infinite]" />
-                    <div className="flex items-start gap-3">
-                        <span className="mt-0.5 text-xl leading-none">⚠️</span>
-                        <div className="text-sm leading-relaxed">
-                            <p className="font-semibold tracking-tight">Attention</p>
-                            <ul className="mt-1 list-disc pl-5 space-y-1">
-                                <li>Your Telegram must have a public <span className="font-semibold">@username</span> (nickname).</li>
-                                <li>Set your display name in the format <span className="font-semibold">Firstname Lastname</span>.</li>
-                                <li>Use the default font — no emojis, symbols, or stylized fonts.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <label className="flex items-start gap-3 text-sm leading-relaxed text-amber-900 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            className="mt-0.5 size-4 min-h-4 min-w-4 shrink-0 grow-0 accent-emerald-600"
+                            checked={agreements.introAndPhoto}
+                            onChange={() => toggleAgreement('introAndPhoto')}
+                        />
+                        <span>
+                            I agree to post my introduction and a real photo immediately after
+                            joining the group chat.
+                        </span>
+                    </label>
+
+                    <label className="flex items-start gap-3 text-sm leading-relaxed text-amber-900 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            className="mt-0.5 size-4 min-h-4 min-w-4 shrink-0 grow-0 accent-emerald-600"
+                            checked={agreements.hasUsername}
+                            onChange={() => toggleAgreement('hasUsername')}
+                        />
+                        <span>I confirm that I have a Telegram username set.</span>
+                    </label>
+
+                    <label className="flex items-start gap-3 text-sm leading-relaxed text-amber-900 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            className="mt-0.5 size-4 min-h-4 min-w-4 shrink-0 grow-0 accent-emerald-600"
+                            checked={agreements.displayNameFormat}
+                            onChange={() => toggleAgreement('displayNameFormat')}
+                        />
+                        <span>
+                            I confirm that my Telegram display name is in Firstname Lastname format,
+                            using Latin letters only and default font (no special symbols or
+                            decorative characters).
+                        </span>
+                    </label>
                 </div>
 
-                <p className="font-semibold text-lg text-green-800">✅ Your Telegram group link:</p>
+                <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-sm leading-relaxed text-red-900">
+                    &ldquo;By confirming these requirements, you agree to follow them immediately
+                    after joining. If any of these conditions are not met, we reserve the right to
+                    remove and permanently ban you from the group without additional notice.&rdquo;
+                </div>
 
-                <a
-                    href="https://t.me/+IJD9iZO7WyNhYTk6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-emerald-300 outline-none font-semibold text-lg"
-                >
-                    <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                    Join the Group
-                    <ArrowLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
-                </a>
+                {allChecked ? (
+                    <>
+                        <p className="font-semibold text-lg text-green-800">
+                            ✅ Your Telegram group link:
+                        </p>
+
+                        <a
+                            href="https://t.me/+IJD9iZO7WyNhYTk6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-emerald-300 outline-none font-semibold text-lg"
+                        >
+                            <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                            Join the Group
+                            <ArrowLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
+                        </a>
+                    </>
+                ) : (
+                    <p className="text-sm text-amber-800 font-medium">
+                        Please check all three confirmations to unlock the Join the Group button.
+                    </p>
+                )}
             </div>
         </div>
     );

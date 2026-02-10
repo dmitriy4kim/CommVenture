@@ -98,9 +98,7 @@ export default function GamePage() {
                                     priority
                                 />
                             </div>
-                            <span className="font-bold text-white text-lg sm:text-xl">
-                                ITQuiz
-                            </span>
+                            <span className="font-bold text-white text-lg sm:text-xl">ITQuiz</span>
                         </Link>
                     </div>
                 </header>
@@ -171,15 +169,20 @@ export default function GamePage() {
                                             <li className="flex items-start">
                                                 <CheckCircle className="mr-2 mt-0.5 h-4 w-4 shrink-0" />
                                                 <span>
-                                                    Answer questions correctly to progress through the game, then press
-                                                    <strong> Continue</strong> — your character will automatically walk to the
-                                                    next checkpoint while the path behind turns green.
+                                                    Answer questions correctly to progress through
+                                                    the game, then press
+                                                    <strong> Continue</strong> — your character will
+                                                    automatically walk to the next checkpoint while
+                                                    the path behind turns green.
                                                 </span>
                                             </li>
                                             <li className="flex items-start">
                                                 <CheckCircle className="h-4 w-4 mr-2 mt-0.5 shrink-0" />
                                                 <span>
-                                                    <span>One wrong answer ends the run. Use <strong>Try Again</strong> to restart</span>
+                                                    <span>
+                                                        One wrong answer ends the run. Use{' '}
+                                                        <strong>Try Again</strong> to restart
+                                                    </span>
                                                 </span>
                                             </li>
                                         </ul>
@@ -234,9 +237,7 @@ export default function GamePage() {
                                     priority
                                 />
                             </div>
-                            <span className="font-bold text-white text-lg sm:text-xl">
-                                ITQuiz
-                            </span>
+                            <span className="font-bold text-white text-lg sm:text-xl">ITQuiz</span>
                         </Link>
                     </div>
                 </header>
