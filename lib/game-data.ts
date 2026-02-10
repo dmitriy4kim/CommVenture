@@ -33,7 +33,7 @@ export const checkpoints: Checkpoint[] = [
         id: 1,
         x: 200,
         y: 200,
-        question: 'Is it okay to send IT-related posts to the UZ IT COMMUNITY chat?',
+        question: 'Is it okay to send IT-related posts to the IT COMMUNITY TEAM chat?',
         options: [
             "Yes, it's an IT community so all IT content is welcome",
             "Only if it's directly affiliated with IT Community of Uzbekistan or approved by Shavkat aka",
@@ -113,12 +113,12 @@ export const checkpoints: Checkpoint[] = [
         options: [
             'Yes, anyone can add new members',
             'Yes, but only on Bazaar Day',
-            'Every member should be selected by the admins',
+            'You can send your friends this bot: @itcomvolunteersbot',
             "Only if they're IT professionals",
         ],
-        correctAnswer: 'Every member should be selected by the admins',
+        correctAnswer: 'You can send your friends this bot: @itcomvolunteersbot',
         explanation:
-            'Every member should be selected by the admins. You can ask your friend to message admins like Shavkat aka for the selection process.',
+            'They must complete all the tasks in the bot and successfully pass the quiz. After completing all requirements, they will be eligible to become volunteers.',
     },
     {
         id: 7,
@@ -139,7 +139,7 @@ export const checkpoints: Checkpoint[] = [
         id: 8,
         x: 1600,
         y: 300,
-        question: 'Can you discuss unrelated topics in the UZ IT COMMUNITY chat?',
+        question: 'Can you discuss unrelated topics in the IT COMMUNITY TEAM chat?',
         options: [
             'Yes, any topic is welcome',
             'Only if it relates to IT policy',
@@ -155,7 +155,7 @@ export const checkpoints: Checkpoint[] = [
         x: 1800,
         y: 200,
         question:
-            'Can you congratulate people in the UZ IT COMMUNITY chat with birthdays or holidays?',
+            'Can you congratulate people in the IT COMMUNITY TEAM chat with birthdays or holidays?',
         options: [
             'Only if it relates to IT COMMUNITY leaders',
             "Sure, but only with Shavkat aka's permission",

@@ -250,9 +250,9 @@ export default function TelegramInvite({
                 </div>
 
                 <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-sm leading-relaxed text-red-900">
-                    &ldquo;By confirming these requirements, you agree to follow them immediately
+                    By confirming these requirements, you agree to follow them immediately
                     after joining. If any of these conditions are not met, we reserve the right to
-                    remove and permanently ban you from the group without additional notice.&rdquo;
+                    remove and permanently ban you from the group without additional notice.
                 </div>
 
                 {allChecked ? (

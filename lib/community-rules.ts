@@ -38,7 +38,9 @@ export const communityRules = [
     },
     {
         question: '👥 How can I add my friends to the group?',
-        answer: 'Ask your friend to message one of our admins: @pulsopros, @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova, or @MSA1005. They’ll guide them through the selection process',
+        answer: 'You can invite your friends by sending them the link to this bot: @itcomvolunteersbot.\n' +
+            'They must complete all the tasks in the bot and successfully pass the quiz.\n' +
+            'After completing all requirements, they will be eligible to become volunteers.',
     },
     {
         question: "🧃Bonus: What's the 2G Community?",
