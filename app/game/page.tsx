@@ -41,9 +41,6 @@ export default function GamePage() {
     });
     const [showIntro, setShowIntro] = useState(true);
     const [showConfetti, setShowConfetti] = useState(false);
-    const [bioText, setBioText] = useState('');
-    const [referredBy, setReferredBy] = useState('');
-    const [addedBy, setaddedBy] = useState('');
     const [, setGameFailed] = useState(false);
 
     useEffect(() => {
@@ -263,15 +260,7 @@ export default function GamePage() {
                             </CardHeader>
                             <CardContent className="pt-6 space-y-6">
                                 {passed ? (
-                                    <TelegramInvite
-                                        playerName={gameState.playerName}
-                                        bioText={bioText}
-                                        setBioText={setBioText}
-                                        referredBy={referredBy}
-                                        setReferredBy={setReferredBy}
-                                        addedBy={addedBy}
-                                        setaddedBy={setaddedBy}
-                                    />
+                                    <TelegramInvite/>
                                 ) : (
                                     <div className="space-y-6">
                                         <p className="text-center text-lg">
